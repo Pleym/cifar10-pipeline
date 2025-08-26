@@ -15,41 +15,23 @@ def create_dataloaders(data_path,batch_size=128):
     
     (train_data, train_labels), (test_data, test_labels) = cifar10_data(data_path)
     
-    # Normalisation
+    
     train_data = torch.FloatTensor(train_data) / 255.0 
     test_data = torch.FloatTensor(test_data) / 255.0
     
-    # Permutation des dimensions pour PyTorch (H, W, C) -> (C, H, W)
+
     train_data = train_data.permute(0, 3, 1, 2)
     test_data = test_data.permute(0, 3, 1, 2)
     
-    # Créer le dataset et dataloader
+    
     train_dataset = TensorDataset(train_data, train_labels)
     test_dataset = TensorDataset(test_data, test_labels)
     
-    # Créer le dataloader
+    
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
     
     return train_loader, test_loader
-
-def create_test_dataloader(test_batch_path, batch_size=128):
-    """Crée un dataloader uniquement pour le fichier test_batch"""
-    
-    # Charger uniquement le test_batch
-    test_data, test_labels = load_data(test_batch_path)
-    
-    # Normalisation
-    test_data = torch.FloatTensor(test_data) / 255.0
-    
-    # Permutation des dimensions pour PyTorch (H, W, C) -> (C, H, W)
-    test_data = test_data.permute(0, 3, 1, 2)
-    
-    # Créer le dataset et dataloader
-    test_dataset = TensorDataset(test_data, test_labels)
-    test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
-    
-    return test_loader
 
 def load_data(file):
     batch = unpickle(file)

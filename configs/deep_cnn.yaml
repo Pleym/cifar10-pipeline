@@ -1,0 +1,36 @@
+model:
+  name: "DeepCNN"
+  num_classes: 10
+  dropout: 0.5
+  conv_layers:
+    - {channels: 32,  kernel_size: 3, stride: 1, padding: 1}
+    - {channels: 64,  kernel_size: 3, stride: 1, padding: 1}
+    - {channels: 128, kernel_size: 3, stride: 1, padding: 1}
+    - {channels: 256, kernel_size: 3, stride: 1, padding: 1}
+    - {channels: 256, kernel_size: 3, stride: 1, padding: 1}
+    - {channels: 512, kernel_size: 3, stride: 1, padding: 1}
+  fc_layers:
+    - {size: 512}
+    - {size: 256}
+
+training:
+  batch_size: 128
+  learning_rate: 0.001
+  num_epochs: 50
+  step_size: 7
+  gamma: 0.1
+  optimizer: "Adam"
+  scheduler: "StepLR"
+
+testing:
+  batch_size: 128
+
+data:
+  dataset: "CIFAR10"
+  data_path: "./data/"
+  augmentation: true
+  normalize: true
+
+logging:
+  experiment_name: "cifar10_deepcnn"
+  log_interval: 10

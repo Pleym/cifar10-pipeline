@@ -1,8 +1,8 @@
-# 🚀 MLOps Pipeline CIFAR-10
+#  MLOps Pipeline CIFAR-10
 
  Complete MLOps pipeline for CIFAR-10 image classification with PyTorch and MLflow tracking.
 
-## 📋 Features
+##  Features
 
 - 🧠 Configurable CNN model (YAML-driven architecture)
 - 📊 MLflow tracking for experiments and metrics
@@ -10,7 +10,7 @@
 - 🔧 Centralized configuration in `configs/model.yaml`
 - 🧪 Testing pipeline with automatic plots logged to MLflow
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 Pipeline_ML/
@@ -29,7 +29,7 @@ Pipeline_ML/
 └── data/                   # CIFAR-10 dataset (not versioned)
 ```
 
-## 🚀 Installation
+##  Installation
 
 ### Prerequisites
 - Python 3.11+
@@ -48,7 +48,7 @@ uv sync
 # (see data/README.md for instructions)
 ```
 
-## 📊 Usage
+##  How to use it ?
 
 ### Training
 ```bash
@@ -66,20 +66,20 @@ mlflow ui
 # Open http://localhost:5000
 ```
 
-## ⚙️ Configuration
+##  Configuration
 
 Edit `configs/model.yaml` to adjust:
 - Model architecture (conv/FC layers)
 - Training hyperparameters
 - Logging parameters
 
-## 📈 Results
+## Results
 You can observe the result with the MLflow UI.
 - Accuracy: ~73% on CIFAR-10 test set
 - Architecture: 3 convolution layers + 3 fully-connected layers
 - Optimizer: Adam, learning rate 0.001
 
-## 🔧 Tech Stack
+##  Tech Stack
 
 - PyTorch — deep learning
 - MLflow — experiment tracking
@@ -87,9 +87,8 @@ You can observe the result with the MLflow UI.
 - Matplotlib/Seaborn — visualization
 - scikit-learn — evaluation metrics
 
-## 📝 Roadmap
+##  Roadmap
 
-### Phase 2 — HPC
 - [ ] DistributedDataParallel (DDP)
 - [ ] Multi-GPU support
 - [ ] HPC optimizations
@@ -98,6 +97,6 @@ You can observe the result with the MLflow UI.
 - [ ] Docker containerization
 - [ ] Kubernetes deployment
 
-## 📄 License
+##  License
 
 MIT License — see LICENSE file for details.
